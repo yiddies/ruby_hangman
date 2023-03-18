@@ -54,7 +54,7 @@ class HangMan
   end
 
   def play_game
-    puts @word
+    # puts @word
     word_hidden = "_" * @word.length
 
     if @hidden_word != ""
@@ -75,7 +75,7 @@ class HangMan
         @hidden_word = word_hidden
         save_game
         puts "Game saved!"
-      elsif guess.length > 1
+      elsif guess.length > 1 or guess == ""
         puts "Please enter only one letter"
         @guesses_left += 1
       end
