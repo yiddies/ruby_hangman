@@ -37,15 +37,13 @@ class HangMan
       puts "#{@guesses_left} Guessess left"
       puts "Guess a letter:"
       guess = gets.chomp
-      found = false
       @word.each_char.with_index do |char, i|
         if char == guess
           word_hidden[i] = guess
-          found = true
         end
       end
       if word_hidden == @word
-        puts "Correct"
+        puts "Correct!"
       else
         @guesses_left -= 1
       end
