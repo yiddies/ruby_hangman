@@ -8,6 +8,7 @@ class HangMan
     @saved_game_path = "../saved_games"
     @savename = "saved_hangman.json"
     @hidden_word = ""
+    @wrong_guesses = []
   end
 
   def save_game
@@ -89,8 +90,10 @@ class HangMan
         puts "Correct!"
       else
         @guesses_left -= 1
+        puts word_hidden
+        @wrong_guesses.push(guess)
+        puts "Wrong Guesses: #{@wrong_guesses}"
       end
-      puts word_hidden
     end
     if @guesses_left == 0
       puts "Game Over!"
